@@ -2,13 +2,11 @@
 <html>
   <head>
     <title>MyOnlineMeal.com</title>
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
     <link rel="stylesheet" href="styles2.css" />
   </head>
 
   <body>
     <div id="reset">
-      <!-- <img src="lock.png" align="centre" id="lock"> -->
       <h3>Find Your Account</h3>
       <p style="color: #a1a3a6">
         Please enter your email address to search for your account.
@@ -21,7 +19,7 @@
           required
         />
       </form>
-      <button id="resetbtn" >Reset Password</button>
+      <button id="resetbtn">Reset Password</button>
       <br />
       <a
         href="login.html"
@@ -68,17 +66,7 @@
         localStorage.removeItem("current");
       });
     }
-    // function reset() {
-    //   var emailAddress = document.getElementById("passreset");
-    //   if (emailAddress != "") {
-    //     const resetreq = sendPasswordResetEmail(auth, emailAddress.value);
-    //     resetreq.then(function () {
-    //       alert("We sent an email with a link to get back into your account.");
-    //     });
-    //     resetreq.catch((e) => alert(e.message));
-    //   }
-    // }
-
+   
     const reset = async () => {
       const Email = document.getElementById("passreset").value;
 
@@ -87,13 +75,11 @@
       try {
         if (Email != "") {
           await sendPasswordResetEmail(auth, Email);
-          alert("We have sent a mail with a link to get back into your account.");
+          alert(
+            "We have sent a mail with a link to get back into your account."
+          );
         }
-        // await signInWithEmailAndPassword(auth, Email, Password);
-        // alert("Signed In");
-        // console.log("Signed In as " + Email.value);
-        // window.location.href = "first_home.html";
-        // localStorage.setItem("current", Email.value);
+       
       } catch (error) {
         console.log(`There was an error: ${error}`);
         alert(error.message + " Try again.");

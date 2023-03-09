@@ -3,7 +3,6 @@
   <head>
     <title>MyOnlineMeal.com</title>
     <link rel="stylesheet" href="styles1.css" />
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
 
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
@@ -14,7 +13,6 @@
 
   <body>
     <div class="login" id="login_div">
-      <!-- <img id="loginicon" src="proicon.png"  style="align:centre" >  -->
       <h1>Sign In</h1>
       <form>
         <input
@@ -34,7 +32,7 @@
           required
         />
       </form>
-      <button class="Button2" id="sin" >Sign in</button>
+      <button class="Button2" id="sin">Sign in</button>
       <a
         href="reset.html"
         style="
@@ -47,7 +45,7 @@
         >Forgotten Password?</a
       >
     </div>
-    <p id="animi">KEEP WRITING</p>
+    <p id="animi">EAT AGAIN</p>
   </body>
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js";
@@ -78,18 +76,6 @@
     // firebase.analytics();
     const auth = getAuth();
 
-    // function signIn() {
-    //   var Email = document.getElementById("email");
-    //   var pass = document.getElementById("password");
-    //   const promise = signInWithEmailAndPassword(auth, Email.value, pass.value);
-    //   promise.catch((e) => alert(e.message));
-    //   promise.then((user) => {
-    //     console.log("Signed In as " + Email.value);
-    //     window.location.href = "final2.html";
-    //     localStorage.setItem("current", Email.value);
-    //   });
-    // }
-
     const signIn = async () => {
       const Email = document.getElementById("email").value;
       const Password = document.getElementById("password").value;
@@ -107,13 +93,5 @@
     };
 
     sin.addEventListener("click", signIn);
-
-    function SignOut() {
-      auth.signOut().then(() => {
-        alert("Thankyou...");
-        window.location.href = "login.html";
-        localStorage.removeItem("current");
-      });
-    }
   </script>
 </html>
