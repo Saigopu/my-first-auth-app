@@ -1,0 +1,292 @@
+/*css reset*/
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* css variable */
+
+:root {
+    --navbar-height: 59px;
+}
+
+/* Navigation bar */
+
+#navbar {
+    display: flex;
+    align-items: center;
+    height: 64px;
+    top: 0px;
+    position: sticky;
+    /*the before section belongs to the navbar and we have set its position to absolute and if the navbar is not positioned then it will be related to the initial containing block(viewport) , that is why we have changed the default value static to sticky(any other than static) here and now the width and height mentioned in percentages in 'before' will bepercentage of navbar dimensions*/
+}
+
+#navbar::before {
+    content: "";
+    background-color: black;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    /*this percentage is relative to the html(viewport)*/
+    height: 100%;
+    /*this percentage is relative to the html(viewport)*/
+    z-index: -1;
+    opacity: 0.7;
+}
+
+/* Navigation bar : logo and image*/
+#logo {
+    margin: 10px 20px;
+}
+
+#logo img {
+    width: 50px;
+    height: 50px;
+    margin: 3px 6px;
+    border-radius: 50%;
+    /*by setting border-radius to 50% we van images circular when width and height are equal*/
+}
+
+/*Navigation bar : list styling*/
+
+#navbar ul {
+    display: flex;
+    font-family: 'Baloo Tammudu 2', cursive;
+}
+
+
+#navbar ul li {
+    list-style: none;
+    font-size: 1.2rem;
+}
+
+/*
+basics revisited
+display property
+block
+The element generates a block element box, generating line breaks both before and after the element when in the normal flow.
+
+inline
+The element generates one or more inline element boxes that do not generate line breaks before or after themselves. In normal flow, the next element will be on the same line if there is space.
+
+*/
+#navbar ul li a {
+    /*default value of the display property of anchor tag is inline*/
+    color: white;
+    display: block;
+    padding: 3px 22px;
+    border-radius: 12px;
+    text-decoration: none;
+}
+
+#navbar ul li a:hover {
+    color: black;
+    background-color: white;
+}
+
+
+
+#sout {
+    /* default value of the display property of anchor tag is inline */
+    color: black;
+    display: block;
+    border-radius: 10px;
+    text-decoration: none;
+    position: absolute;
+    top: 15%;
+    right: 2%;
+    padding: 5px;
+    font-family: 'Baloo Tammudu 2', cursive;
+}
+
+#sout:hover {
+    color: red;
+    background-color: white;
+}
+
+/*Home section*/
+
+#home {
+    display: flex;
+    flex-direction: column;
+    padding: 3px 200px;
+    justify-content: center;
+    align-items: center;
+    height: 322px;
+    /* position: relative; */
+}
+
+#home::before {
+    /*using this type of pseudoselector for setting the backgroung image or effects is best technique*/
+    content: "";
+    background: no-repeat center/cover url(../images/spaghetti-1932466_640.jpg);
+    /*right now we are in css folder and the image we want is in the images folder so the first two dots are to come outside of this folder*/
+    /*refer mdn https://developer.mozilla.org/en-US/docs/Web/CSS/background#syntax for the syntax used and in place of cover we can also keep 100%*/
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    /*this percentage is relative to the html(viewport)*/
+    height: 389px;
+    /*this percentage is relative to the html(viewport)*/
+    z-index: -1;
+    opacity: 0.89;
+}
+
+#home h1 {
+    color: white;
+    text-align: center;
+    font-family: 'Bree Serif', serif;
+}
+
+#home p {
+    color: white;
+    text-align: center;
+    font-size: 1.2rem;
+    font-family: 'Bree Serif', serif;
+}
+
+/*services section*/
+.services-container {
+    padding-top: 0px;
+}
+
+#services {
+    display: flex;
+    margin: 13px;
+}
+
+#services .box {
+    border: 2px solid brown;
+    padding: 8px;
+    margin: 3px 32px;
+    border-radius: 20px;
+    background-color: rgb(245 242 242);
+}
+
+#services .box img {
+    height: 100px;
+    display: block;
+    margin: auto;
+    width: 150px;
+}
+
+#services .box p {
+
+    font-family: 'Bree Serif', serif;
+}
+
+/*client section*/
+
+#client-section {
+    /* height: 271px; */
+    position: relative;
+    z-index: -1;
+}
+
+#client-section::before {
+    content: "";
+    position: absolute;
+    background: no-repeat center/cover url(../images/lime-2481346_640.jpg);
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    opacity: 0.4;
+}
+
+#clients {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#clients img {
+    height: 124px;
+    width: 159px;
+}
+
+.client-item {
+    padding: 20px;
+}
+
+/*contact section*/
+
+#contact {
+    position: relative;
+}
+
+#contact::before {
+    content: "";
+    position: absolute;
+    background: no-repeat center/cover url(../images/telephone-3840285_640.jpg);
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.6;
+
+}
+
+#contact-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* padding-bottom: 20px; */
+}
+
+#contact-box input,
+#contact-box textarea {
+    width: 100%;
+    padding: 0.2rem;
+    border-radius: 9px;
+    border: 1px solid white;
+    font-size: 1rem;
+}
+
+#contact-box form {
+    width: 40%;
+
+}
+
+#contact-box label {
+    font-size: 1rem;
+    font-family: 'Bree Serif', serif;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    padding: 5px 15px;
+}
+
+/*utilty classes*/
+.h-primary {
+    font-size: 2.2rem;
+    padding: 12px;
+    font-family: 'Bree Serif', serif;
+}
+
+.h-secondary {
+    font-family: 'Bree Serif', serif;
+    font-size: 1.2rem;
+    padding: 12px;
+}
+
+.btn {
+    padding: 6px 20px;
+    border: 2px solid white;
+    background-color: brown;
+    color: white;
+    margin: 17px;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.center {
+    text-align: center;
+}
